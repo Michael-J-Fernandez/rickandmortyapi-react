@@ -27,11 +27,7 @@ function App() {
   return (
     <div className="App">
       <Nav getPrev={getPrev} getNext={getNext} />
-      {
-        charData.results ?
-        <CardsList results={charData.results} /> : 
-        <h1 className="loading">Loading...</h1>
-      }
+      { charData.results && <CardsList results={charData.results} /> }
     </div>
   );
 }
