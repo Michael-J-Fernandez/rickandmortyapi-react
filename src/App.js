@@ -15,11 +15,11 @@ function App() {
   }, [URL])
 
 
-  const getPrev = (prev) => {
+  const getPrev = () => {
     setURL(charData.info.prev)
   }
 
-  const getNext = (next) => {
+  const getNext = () => {
     setURL(charData.info.next)
   }
 
@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <Nav getPrev={getPrev} getNext={getNext} />
       {
-        charData.results ? 
+        charData.results ?
         <CardsList results={charData.results} /> : 
         <h1 className="loading">Loading...</h1>
       }

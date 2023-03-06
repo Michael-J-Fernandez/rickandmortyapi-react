@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 const Card = ({ char }) => {
   const [flipCard, setFlipCard] = useState(false);
 
@@ -24,7 +25,6 @@ const Card = ({ char }) => {
 
   const cardBack = (
     <>
-      {/* <img src={char.image} alt={`${char.name}`} /> */}
       <h3 className="card-name-back">{char.name}</h3>
       <div className="card--stats-back">
         <p>
