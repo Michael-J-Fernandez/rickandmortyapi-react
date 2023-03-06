@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Nav from "./components/Nav";
-import Cards from './components/Cards';
+import CardsList from './components/CardsList';
 let BASE_URL = "https://rickandmortyapi.com/api/character/";
 
 function App() {
@@ -27,7 +27,11 @@ function App() {
   return (
     <div className="App">
       <Nav getPrev={getPrev} getNext={getNext} />
-      {charData.results ? <Cards results={charData.results} /> : <h1 className="loading">Loading...</h1>}
+      {
+        charData.results ? 
+        <CardsList results={charData.results} /> : 
+        <h1 className="loading">Loading...</h1>
+      }
     </div>
   );
 }
