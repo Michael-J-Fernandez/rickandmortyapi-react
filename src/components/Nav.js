@@ -1,5 +1,6 @@
 
-export default function Nav({ setURL, prev, next }) {
+export default function Nav({ setURL, info }) {
+  const { prev, next } = info;
 
   const getPrev = () => {
     setURL(prev)
@@ -10,7 +11,6 @@ export default function Nav({ setURL, prev, next }) {
   }
   
   return (
-
     <nav>
       <div className="nav--button" onClick={getPrev}>{"<<"} Prev</div>
       <h1 className="main-title">Rick and Morty Characters!</h1>

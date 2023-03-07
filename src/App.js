@@ -9,19 +9,24 @@ function App() {
   const [ charData, setCharData ] = useState({})
   
   useEffect(()=>{
+    if (!URL) {
+      return;
+    }
+    
     fetch(URL)
-      .then(res => res.json())
-      .then(data => setCharData(data))
+    .then(res => res.json())
+    .then(data => setCharData(data))
+    console.log('Effect Used!!')
   }, [URL])
 
 
   return (
     <div className="App">
+      {charData.info &&
       <Nav
         setURL={setURL}
-        prev={charData.info.prev}
-        next={charData.info.next}
-      />
+        info={charData.info}
+      />}
       {charData.results && <CardsList results={charData.results} />}
     </div>
   );
