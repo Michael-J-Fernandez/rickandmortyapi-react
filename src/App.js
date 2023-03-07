@@ -15,19 +15,14 @@ function App() {
   }, [URL])
 
 
-  const getPrev = () => {
-    setURL(charData.info.prev)
-  }
-
-  const getNext = () => {
-    setURL(charData.info.next)
-  }
-
-
   return (
     <div className="App">
-      <Nav getPrev={getPrev} getNext={getNext} />
-      { charData.results && <CardsList results={charData.results} /> }
+      <Nav
+        setURL={setURL}
+        prev={charData.info.prev}
+        next={charData.info.next}
+      />
+      {charData.results && <CardsList results={charData.results} />}
     </div>
   );
 }
